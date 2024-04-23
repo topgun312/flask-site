@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS contractors (
+id SERIAL PRIMARY KEY NOT NULL,
+conname VARCHAR NOT NULL,
+email VARCHAR NOT NULL,
+phone VARCHAR NOT NULL,
+experience INTEGER,
+url text NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS customers (
+id SERIAL PRIMARY KEY NOT NULL,
+contractor_id INTEGER NULL,
+cusname VARCHAR NOT NULL,
+email VARCHAR NOT NULL,
+phone VARCHAR NOT NULL,
+url text NOT NULL,
+UNIQUE (contractor_id),
+FOREIGN KEY (contractor_id) REFERENCES contractors(id) ON DELETE SET NULL
+);

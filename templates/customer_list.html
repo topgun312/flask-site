@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+  <ul class="list-posts">
+    {% if customers %}
+      {% for c in customers %}
+      <li>
+          <p class="title"><a href="{{ url_for('showCustomer', alias = c.url) }}">{{ c.cusname }}</a></p>
+          <p class="annonce">Email: {{ c.email }}</p>
+      </li>
+      {% endfor %}
+    {% else %}
+      <p>К сожалению на данной странице пока нет информации по заказчикам</p>
+    {% endif %}
+  </ul>
+{% endblock %}

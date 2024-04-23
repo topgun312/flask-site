@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {{ super() }}
+  <h2>Исполнитель {{ contractor.corname }}</h2>
+  <p class="annonce">Email: {{ contractor.email }}</p>
+  <p class="annonce">Номер телефона: {{ contractor.phone }}</p>
+  <p class="annonce">Опыт работы: {{ contractor.experience }} года(лет)</p>
+  <p class="annonce">Текущий заказчик: {{ contractor.cusname }}</p>
+{% endblock %}

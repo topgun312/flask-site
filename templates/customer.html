@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {{ super() }}
+  <h2>Заказчик {{ customer.cusname }}</h2>
+  <p class="annonce">Email: {{ customer.email }}</p>
+  <p class="annonce">Номер телефона: {{ customer.phone }}</p>
+  <p class="annonce">Текущий исполнитель: {{ customer.conname }}</p>
+{% endblock %}

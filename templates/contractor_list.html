@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+  <ul class="list-posts">
+    {% if contractors %}
+      {% for c in contractors %}
+      <li>
+          <p class="title"><a href="{{ url_for('showContractor', alias = c.url) }}">{{ c.conname }}</a></p>
+          <p class="annonce">Email: {{ c.email }}</p>
+      </li>
+      {% endfor %}
+    {% else %}
+      <p>К сожалению на данной странице пока нет информации по исполнителям</p>
+    {% endif %}
+  </ul>
+{% endblock %}
